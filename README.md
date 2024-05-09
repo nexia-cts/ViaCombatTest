@@ -1,9 +1,7 @@
-# Fabric Example Mod
+# ViaCombatTest
 
-## Setup
+ViaVersion addon to add support for the combat test snapshots.
+This project is trying to port the combat test snapshots to minecraft, so you can connect to a combat test snapshot server on the latest minecraft client.
 
-For setup instructions please see the [fabric wiki page](https://fabricmc.net/wiki/tutorial:setup) that relates to the IDE that you are using.
-
-## License
-
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+### Added Combat test snapshots
+- Combat Test 8c
