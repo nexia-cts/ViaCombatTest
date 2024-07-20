@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "viacombattest",
+  "version": "${version}",
+  "name": "ViaCombatTest",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "environment": "server",
+  "entrypoints": {
+    "main": [
+      "com.nexia.vct.ViaCombatTest"
+    ]
+  },
+  "mixins": [
+    "viacombattest.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
