@@ -21,10 +21,12 @@ public interface ViaCombatTestPlatform {
 
         final ProtocolManager protocolManager = Via.getManager().getProtocolManager();
 
-        protocolManager.registerProtocol(new CombatTest8c(), ProtocolVersion.v1_16_2, CombatTestProtocolVersion.CombatTest8c);
+        protocolManager.registerProtocol(new CombatTest8c(), CombatTestProtocolVersion.CombatTest8c, ProtocolVersion.v1_16_2);
 
-        protocolManager.registerBaseProtocol(new BaseProtocol1_16(), Range.singleton(CombatTestProtocolVersion.CombatTest8c.getVersion()));
+        //protocolManager.registerBaseProtocol(new BaseProtocol1_16(), Range.singleton(ProtocolVersion.getProtocol(CombatTestProtocolVersion.CombatTest8c.getVersion())));
     }
+
+    void run();
 
     Logger getLogger();
 

@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "viacombattest",
+  "name": "ViaCombatTest",
+  "version": "${version}",
+  "license": "GPL-3.0",
+  "environment": "*",
+  "authors": [
+    "NotCoded"
+  ],
+  "entrypoints": {
+    "viafabric:via_api_initialized": [
+      "com.nexia.viacombattest.ViaFabricAddon"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.14.0",
+    "viafabric": ">=0.4.10"
+  }
+}
