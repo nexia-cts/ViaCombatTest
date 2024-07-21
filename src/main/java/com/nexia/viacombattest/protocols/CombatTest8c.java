@@ -25,5 +25,16 @@ public class CombatTest8c extends AbstractProtocol<ClientboundPackets1_16_2, Cli
                 read(Types.BOOLEAN); // useShieldOnCrouch
             }
         });
+
+        this.registerServerbound(ServerboundPackets1_16_2.INTERACT,  new PacketHandlers() {
+            @Override
+            protected void register() {
+                map(Types.PROFILE_ACTIONS_ENUM); // INTERACT
+                map(Types.PROFILE_ACTIONS_ENUM); // ATTACK
+                map(Types.PROFILE_ACTIONS_ENUM); // INTERACT_AT
+                map(Types.PROFILE_ACTIONS_ENUM); // AIR_SWING
+            }
+        });
+        // ^^ im not sure if this works
     }
 }

@@ -8,6 +8,9 @@
   "authors": [
     "NotCoded"
   ],
+  "contributors": [
+    "infinityy"
+  ],
   "entrypoints": {
     "viafabric:via_api_initialized": [
       "com.nexia.viacombattest.ViaFabricAddon"
@@ -16,6 +19,9 @@
   "depends": {
     "fabricloader": ">=0.14.0",
     "viafabric": ">=0.4.10",
-    "minecraft": ">=1.20.1"
+    "minecraft": ">=1.20 <=1.20.2"
+  },
+  "recommends": {
+    "combatify": "*"
   }
 }
