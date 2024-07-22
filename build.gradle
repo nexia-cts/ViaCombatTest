@@ -14,11 +14,12 @@ base {
 repositories {
 	mavenCentral()
 	maven { url = "https://repo.viaversion.com" }
+	maven { url = "https://api.modrinth.com/maven" }
 }
 
 dependencies {
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
-	mappings loom.officialMojangMappings()
+	mappings "net.fabricmc:yarn:${project.minecraft_version}+build.${project.yarn_build_number}:v2"
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
 	compileOnly "com.viaversion:viaversion:${project.viaversion_version}"

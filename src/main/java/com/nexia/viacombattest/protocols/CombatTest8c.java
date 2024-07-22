@@ -1,12 +1,20 @@
 package com.nexia.viacombattest.protocols;
 
 import com.viaversion.viaversion.api.protocol.AbstractProtocol;
+import com.viaversion.viaversion.api.protocol.remapper.PacketHandler;
 import com.viaversion.viaversion.api.protocol.remapper.PacketHandlers;
+import com.viaversion.viaversion.api.protocol.version.ProtocolVersion;
+import com.viaversion.viaversion.api.protocol.version.VersionType;
 import com.viaversion.viaversion.api.type.Types;
 import com.viaversion.viaversion.protocols.v1_16_1to1_16_2.packet.ClientboundPackets1_16_2;
 import com.viaversion.viaversion.protocols.v1_16_1to1_16_2.packet.ServerboundPackets1_16_2;
 
 public class CombatTest8c extends AbstractProtocol<ClientboundPackets1_16_2, ClientboundPackets1_16_2, ServerboundPackets1_16_2, ServerboundPackets1_16_2> {
+    public static final ProtocolVersion instance = new ProtocolVersion(VersionType.SPECIAL, 803, -1, "Combat Test 8c", null);
+    static {
+        ProtocolVersion.register(instance);
+    }
+
     public CombatTest8c() {
         super(ClientboundPackets1_16_2.class, ClientboundPackets1_16_2.class, ServerboundPackets1_16_2.class, ServerboundPackets1_16_2.class);
     }
@@ -15,7 +23,7 @@ public class CombatTest8c extends AbstractProtocol<ClientboundPackets1_16_2, Cli
     protected void registerPackets() {
         this.registerServerbound(ServerboundPackets1_16_2.CLIENT_INFORMATION, new PacketHandlers() {
             @Override
-            public void register() {
+            protected void register() {
                 map(Types.STRING); //language
                 map(Types.BYTE); //viewDistance
                 map(Types.VAR_INT); //chatVisibility
@@ -25,16 +33,5 @@ public class CombatTest8c extends AbstractProtocol<ClientboundPackets1_16_2, Cli
                 read(Types.BOOLEAN); // useShieldOnCrouch
             }
         });
-
-        this.registerServerbound(ServerboundPackets1_16_2.INTERACT,  new PacketHandlers() {
-            @Override
-            protected void register() {
-                map(Types.PROFILE_ACTIONS_ENUM); // INTERACT
-                map(Types.PROFILE_ACTIONS_ENUM); // ATTACK
-                map(Types.PROFILE_ACTIONS_ENUM); // INTERACT_AT
-                map(Types.PROFILE_ACTIONS_ENUM); // AIR_SWING
-            }
-        });
-        // ^^ im not sure if this works
     }
 }
