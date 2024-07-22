@@ -24,8 +24,8 @@ public class MixinAirSwingFix {
             if (FabricLoader.getInstance().isModLoaded("combatify")) {
                 // Convert to ServerboundMissPacket, handle it, and cancel this
                 CombatifyIntegration.fakeHandleServerboundMiss();
-                isCancelled = true;
             }
+            isCancelled = true;
             instance.writeVarInt(0);
             return enumClass.getEnumConstants()[0];
         }
