@@ -6,9 +6,8 @@
   "license": "GPL-3.0",
   "environment": "*",
   "authors": [
-    "NotCoded"
-  ],
-  "contributors": [
+    "NotCoded",
+    "betterclient",
     "infinityy"
   ],
   "entrypoints": {
@@ -23,6 +22,9 @@
   },
   "recommends": {
     "combatify": "*"
+  },
+  "breaks": {
+    "fabric-networking-api-v1": "*"
   },
   "mixins": ["vct_fix.mixins.json"]
 }

@@ -1,7 +1,6 @@
 package com.nexia.viacombattest.protocols;
 
 import com.viaversion.viaversion.api.protocol.AbstractProtocol;
-import com.viaversion.viaversion.api.protocol.remapper.PacketHandler;
 import com.viaversion.viaversion.api.protocol.remapper.PacketHandlers;
 import com.viaversion.viaversion.api.protocol.version.ProtocolVersion;
 import com.viaversion.viaversion.api.protocol.version.VersionType;
