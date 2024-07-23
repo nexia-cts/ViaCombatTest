@@ -5,16 +5,29 @@ import com.nexia.viacombattest.platform.ViaCombatTestPlatform;
 import com.viaversion.viaversion.api.Via;
 import com.viaversion.viaversion.api.ViaManager;
 import com.viaversion.viaversion.api.protocol.version.VersionProvider;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.io.File;
 import java.nio.file.Path;
 import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
+/**
+ * ViaFabric addon for ViaCombatTest
+ */
 public class ViaFabricAddon implements ViaCombatTestPlatform, Runnable {
+    /**
+     * Constructor for the addon
+     */
+    public ViaFabricAddon() {}
+    
     private final Logger logger = LogManager.getLogManager().getLogger("ViaCombatTest");
     private File configDir;
 
+    /**
+     * Late enable implementation
+     * @see com.nexia.viacombattest.mixin.MixinViaVersionLateEnable#afterRefreshVersions(CallbackInfo) 
+     */
     public static void lateEnable() {
         final ViaManager manager = Via.getManager();
         final VersionProvider delegate = manager.getProviders().get(VersionProvider.class);

@@ -10,8 +10,15 @@ import com.viaversion.viaversion.api.protocol.version.ProtocolVersion;
 import java.io.File;
 import java.util.logging.Logger;
 
+/**
+ * Via Combat Test main platform
+ */
 public interface ViaCombatTestPlatform {
 
+    /**
+     * Initializes protocols
+     * @param dataFolder config folder
+     */
     default void init(final File dataFolder) {
         final ViaCombatTestConfig config = new ViaCombatTestConfig(dataFolder, getLogger());
         config.reload();
@@ -23,10 +30,16 @@ public interface ViaCombatTestPlatform {
         protocolManager.registerProtocol(new CombatTest8c(), CombatTest8c.instance, ProtocolVersion.v1_16_2);
     }
 
-    void run();
-
+    /**
+     * Logger
+     * @return logger for the platform
+     */
     Logger getLogger();
 
+    /**
+     * Config
+     * @return platform's config folder
+     */
     File getDataFolder();
 
 }

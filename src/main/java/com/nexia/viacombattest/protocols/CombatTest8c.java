@@ -10,16 +10,29 @@ import com.viaversion.viaversion.protocols.v1_16_1to1_16_2.packet.ClientboundPac
 import com.viaversion.viaversion.protocols.v1_16_1to1_16_2.packet.ServerboundPackets1_16_2;
 import net.fabricmc.loader.api.FabricLoader;
 
+/**
+ * Main protocol for combat test 8c
+ */
 public class CombatTest8c extends AbstractProtocol<ClientboundPackets1_16_2, ClientboundPackets1_16_2, ServerboundPackets1_16_2, ServerboundPackets1_16_2> {
+    /**
+     * Protocol version for combat test 8c
+     */
     public static final ProtocolVersion instance = new ProtocolVersion(VersionType.SPECIAL, 803, -1, "Combat Test 8c", null);
     static {
         ProtocolVersion.register(instance);
     }
 
+    /**
+     * Constructor for combat test 8c
+     */
     public CombatTest8c() {
         super(ClientboundPackets1_16_2.class, ClientboundPackets1_16_2.class, ServerboundPackets1_16_2.class, ServerboundPackets1_16_2.class);
     }
 
+    /**
+     * Register serverbound client information packet
+     * @see CombatifyIntegration#fakeHandleServerboundClientInformationExtension(boolean)
+     */
     @Override
     protected void registerPackets() {
         this.registerServerbound(ServerboundPackets1_16_2.CLIENT_INFORMATION, new PacketHandlers() {
